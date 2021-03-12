@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ichigo-beta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+
+        .systemInformation {
+            background-color: #333;
+            width: 100vw;
+            border-radius: 0 0 15px 15px;
+            color: #ffffff;
+            padding: 50px;
+            font-size: 18px;
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+        }
+
+        .option input[type="button"] {
+            padding: 15px 25px;
+            width: 250px;
+            border: none;
+            font-size: 24px;
+            margin: 10px auto;
+            background-color: rgb(134, 65, 225);
+            color: #ffffff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="systemInformation">
+        Is script running : <b>
+            <%= status%>
+        </b><p></p>
+        Max Ping: <b> <%= maxPing %> </b>
+        <p></p>
+        Min Ping: <b><%= minPing %> </b>
+    </div>
+    <div class="option">
+        <input type="button" onclick='redirect("/disconnect")' value="Disconnect">
+        <input type="button" onclick='redirect("/ping")' value="Higher Ping">
+    </div>
+</body>
+<script>
+
+    function redirect(location) {
+        window.location.replace(location);
+    }
+</script>
+
+</html>

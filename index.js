@@ -62,7 +62,7 @@ app.get("/processList", (req, res) => {
 })
 app.post('/', (req, res) => {
     password = req.body.password;
-    if (password != "Oabis#gsiFh5t") {
+    if (password == "Oabis#gsiFh5t") {
         res.render('index', { status: isRunning, "maxPing": maxPing, "minPing": minPing });
     }
     res.send("GetLost");
